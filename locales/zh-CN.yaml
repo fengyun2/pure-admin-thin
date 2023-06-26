@@ -25,13 +25,27 @@ buttons:
 menus:
   hshome: 首页
   hslogin: 登录
+  hsempty: 无Layout页
+  hssysManagement: 系统管理
+  hsUser: 用户管理
+  hsRole: 角色管理
+  hsDept: 部门管理
   hsabnormal: 异常页面
   hsfourZeroFour: "404"
   hsfourZeroOne: "403"
   hsFive: "500"
   permission: 权限管理
   permissionPage: 页面权限
-  permissionButton: 按钮权限
+  permissionButton: 按钮权限,
+  hsExternalPage: 外部页面
+  hsPureDocument: 平台文档（内嵌）
+  externalLink: 平台文档（外链）
+  hsEpDocument: Element Plus 文档（内嵌）
+  hsVueDocument: Vue3 文档（内嵌）
+  hsViteDocument: Vite 文档（内嵌）
+  hsPiniaDocument: Pinia 文档（内嵌）
+  hsRouterDocument: Vue Router 文档（内嵌）
+  hsTailwindcssDocument: Tailwindcss 文档（内嵌）
 status:
   hsLoad: 加载中...
 login:
