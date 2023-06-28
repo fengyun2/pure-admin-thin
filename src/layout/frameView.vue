@@ -22,6 +22,57 @@ function hideLoading() {
   loading.value = false;
 }
 
+function iframeOnLoad() {
+  console.warn("iframeOnLoad =======>");
+  hideLoading();
+
+  const iframe = unref(frameRef);
+  if (!iframe) return;
+  const _frame = iframe as any;
+
+  if (_frame && _frame.contentWindow) {
+    // otherWindow.postMessage(message, targetOrigin, [transfer]);
+    console.warn(_frame.contentWindow, " _frame.contentWindow =====>");
+    // 在iframe加载完成后，主页面发送数据
+    const params = {
+      id: "mainFrame",
+      data: {
+        user: "刘亦菲",
+        age: 16
+      }
+    };
+    _frame.contentWindow.postMessage(JSON.stringify(params), "*");
+    // 主页面接收参数
+    window.addEventListener("message", (e: any) => {
+      try {
+        const data = JSON.parse(e.data);
+        console.warn(data, " 主页面接收参数");
+      } catch (error) {
+        console.error(error);
+      }
+    });
+
+    // // iframe页面向主页面发送数据
+    // window.parent?.postMessage(
+    //   JSON.stringify({
+    //     from: "qq",
+    //     event: "close",
+    //     code: 0
+    //   }),
+    //   "*"
+    // );
+    // // iframe页面接收主页面传递过来的数据
+    // window.addEventListener("message", (event: any) => {
+    //   try {
+    //     const data = JSON.parse(event.data);
+    //     console.warn(data, " iframe页面接收参数");
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // });
+  }
+}
+
 function init() {
   nextTick(() => {
     const iframe = unref(frameRef);
@@ -29,11 +80,11 @@ function init() {
     const _frame = iframe as any;
     if (_frame.attachEvent) {
       _frame.attachEvent("onload", () => {
-        hideLoading();
+        iframeOnLoad();
       });
     } else {
       iframe.onload = () => {
-        hideLoading();
+        iframeOnLoad();
       };
     }
   });

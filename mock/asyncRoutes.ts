@@ -166,6 +166,14 @@ const frameRouter = {
           ]
         }
       ]
+    },
+    {
+      path: "/iframe/postmessage",
+      name: "postmessage",
+      meta: {
+        title: "menus.postmessage",
+        frameSrc: "http://localhost:5173"
+      }
     }
     // {
     //   path: "/iframe/pure",
