@@ -5,5 +5,5 @@ defineOptions({
 </script>
 
 <template>
-  <h1>Pure-Admin-Thin（国际化版本）</h1>
+  <h1>伟大的航道</h1>
 </template>

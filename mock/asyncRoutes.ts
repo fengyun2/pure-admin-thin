@@ -83,76 +83,161 @@ const frameRouter = {
   },
   children: [
     {
-      path: "/iframe/pure",
-      name: "FramePure",
+      path: "/iframe/vue",
+      name: "vue",
       meta: {
-        title: "menus.hsPureDocument",
-        frameSrc: "https://yiming_chang.gitee.io/pure-admin-doc",
-        roles: ["admin", "common"]
-      }
-    },
-    {
-      path: "/external",
-      name: "https://yiming_chang.gitee.io/pure-admin-doc",
-      meta: {
-        title: "menus.externalLink",
-        roles: ["admin", "common"]
-      }
-    },
-    {
-      path: "/iframe/ep",
-      name: "FrameEp",
-      meta: {
-        title: "menus.hsEpDocument",
-        frameSrc: "https://element-plus.org/zh-CN/",
-        roles: ["admin", "common"]
-      }
-    },
-    {
-      path: "/iframe/vue3",
-      name: "FrameVue",
-      meta: {
-        title: "menus.hsVueDocument",
-        frameSrc: "https://cn.vuejs.org/",
-        roles: ["admin", "common"]
-      }
-    },
-    {
-      path: "/iframe/vite",
-      name: "FrameVite",
-      meta: {
-        title: "menus.hsViteDocument",
-        frameSrc: "https://cn.vitejs.dev/",
-        roles: ["admin", "common"]
-      }
-    },
-    {
-      path: "/iframe/pinia",
-      name: "FramePinia",
-      meta: {
-        title: "menus.hsPiniaDocument",
-        frameSrc: "https://pinia.vuejs.org/zh/index.html",
-        roles: ["admin", "common"]
-      }
-    },
-    {
-      path: "/iframe/vue-router",
-      name: "FrameRouter",
-      meta: {
-        title: "menus.hsRouterDocument",
-        frameSrc: "https://router.vuejs.org/zh/",
-        roles: ["admin", "common"]
-      }
-    },
-    {
-      path: "/iframe/tailwindcss",
-      name: "FrameTailwindcss",
-      meta: {
-        title: "menus.hsTailwindcssDocument",
-        frameSrc: "https://tailwindcss.com/docs/installation",
-        roles: ["admin", "common"]
-      }
+        title: "menus.vue" // vue
+      },
+      children: [
+        {
+          path: "/iframe/vue/guide",
+          name: "vue-guide",
+          meta: {
+            title: "menus.vue-guide" // vue文档
+          },
+          children: [
+            {
+              path: "/iframe/vue/guide/introduction",
+              name: "vue-guide-introduction",
+              meta: {
+                title: "menus.vue-guide-introduction", // vue简介
+                frameSrc: "https://cn.vuejs.org/guide/introduction.html"
+              }
+            },
+            {
+              path: "/iframe/vue/guide/quick-start",
+              name: "vue-guide-quick-start",
+              meta: {
+                title: "menus.vue-guide-quick-start", // vue快速上手
+                frameSrc: "https://cn.vuejs.org/guide/quick-start.html"
+              }
+            },
+            {
+              path: "/iframe/vue/guide/essentials/application",
+              name: "vue-guide-essentials-application",
+              meta: {
+                title: "menus.vue-guide-essentials-application", // vue创建一个应用
+                frameSrc:
+                  "https://cn.vuejs.org/guide/essentials/application.html"
+              }
+            },
+            {
+              path: "/iframe/vue/guide/essentials/template-syntax",
+              name: "vue-guide-essentials-template-syntax",
+              meta: {
+                title: "menus.vue-guide-essentials-template-syntax", // Vue模板语法
+                frameSrc:
+                  "https://cn.vuejs.org/guide/essentials/template-syntax.html"
+              }
+            }
+          ]
+        },
+        {
+          path: "/iframe/vue/ecosystem",
+          name: "vue-ecosystem",
+          meta: {
+            title: "menus.vue-ecosystem" // vue生态系统
+          },
+          children: [
+            {
+              path: "/iframe/vue/vue-router",
+              name: "vue-router",
+              meta: {
+                title: "menus.vue-router",
+                frameSrc: "https://router.vuejs.org"
+              }
+            },
+            {
+              path: "/iframe/vue/pinia",
+              name: "pinia",
+              meta: {
+                title: "menus.pinia",
+                frameSrc: "https://pinia.vuejs.org"
+              }
+            },
+            {
+              path: "/iframe/vue/vite",
+              name: "vite",
+              meta: {
+                title: "menus.vite",
+                frameSrc: "https://vitejs.dev"
+              }
+            }
+          ]
+        }
+      ]
     }
+    // {
+    //   path: "/iframe/pure",
+    //   name: "FramePure",
+    //   meta: {
+    //     title: "menus.hsPureDocument",
+    //     frameSrc: "https://yiming_chang.gitee.io/pure-admin-doc",
+    //     roles: ["admin", "common"]
+    //   }
+    // },
+    // {
+    //   path: "/external",
+    //   name: "https://yiming_chang.gitee.io/pure-admin-doc",
+    //   meta: {
+    //     title: "menus.externalLink",
+    //     roles: ["admin", "common"]
+    //   }
+    // },
+    // {
+    //   path: "/iframe/ep",
+    //   name: "FrameEp",
+    //   meta: {
+    //     title: "menus.hsEpDocument",
+    //     frameSrc: "https://element-plus.org/zh-CN/",
+    //     roles: ["admin", "common"]
+    //   }
+    // },
+    // {
+    //   path: "/iframe/vue3",
+    //   name: "FrameVue",
+    //   meta: {
+    //     title: "menus.hsVueDocument",
+    //     frameSrc: "https://cn.vuejs.org/",
+    //     roles: ["admin", "common"]
+    //   }
+    // },
+    // {
+    //   path: "/iframe/vite",
+    //   name: "FrameVite",
+    //   meta: {
+    //     title: "menus.hsViteDocument",
+    //     frameSrc: "https://cn.vitejs.dev/",
+    //     roles: ["admin", "common"]
+    //   }
+    // },
+    // {
+    //   path: "/iframe/pinia",
+    //   name: "FramePinia",
+    //   meta: {
+    //     title: "menus.hsPiniaDocument",
+    //     frameSrc: "https://pinia.vuejs.org/zh/index.html",
+    //     roles: ["admin", "common"]
+    //   }
+    // },
+    // {
+    //   path: "/iframe/vue-router",
+    //   name: "FrameRouter",
+    //   meta: {
+    //     title: "menus.hsRouterDocument",
+    //     frameSrc: "https://router.vuejs.org/zh/",
+    //     roles: ["admin", "common"]
+    //   }
+    // },
+    // {
+    //   path: "/iframe/tailwindcss",
+    //   name: "FrameTailwindcss",
+    //   meta: {
+    //     title: "menus.hsTailwindcssDocument",
+    //     frameSrc: "https://tailwindcss.com/docs/installation",
+    //     roles: ["admin", "common"]
+    //   }
+    // }
   ]
 };
 

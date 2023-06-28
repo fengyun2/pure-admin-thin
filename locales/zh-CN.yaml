@@ -46,6 +46,16 @@ menus:
   hsPiniaDocument: Pinia 文档（内嵌）
   hsRouterDocument: Vue Router 文档（内嵌）
   hsTailwindcssDocument: Tailwindcss 文档（内嵌）
+  vue: Vue
+  vue-guide: Vue文档
+  vue-guide-introduction: Vue简介
+  vue-guide-quick-start: Vue快速上手
+  vue-guide-essentials-application: Vue创建一个应用
+  vue-guide-essentials-template-syntax: Vue模板语法
+  vue-ecosystem: Vue生态系统
+  vue-router: VueRouter
+  pinia: Pinia
+  vite: Vite
 status:
   hsLoad: 加载中...
 login:
