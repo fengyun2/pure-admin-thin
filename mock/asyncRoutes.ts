@@ -1,6 +1,6 @@
 // 模拟后端动态生成路由
 import { MockMethod } from "vite-plugin-mock";
-import { system, permission, frame } from "@/router/enums";
+import { system, permission, frame, components } from "@/router/enums";
 
 /**
  * roles：页面级别权限，这里模拟二种 "admin"、"common"
@@ -249,6 +249,26 @@ const frameRouter = {
   ]
 };
 
+const componentsRouter = {
+  path: "/components",
+  meta: {
+    icon: "setting",
+    title: "组件demo",
+    rank: components
+  },
+  children: [
+    {
+      path: "/components/form",
+      name: "form",
+      meta: {
+        icon: "flUser",
+        title: "form",
+        roles: ["admin"]
+      }
+    }
+  ]
+};
+
 export default [
   {
     url: "/getAsyncRoutes",
@@ -256,7 +276,7 @@ export default [
     response: () => {
       return {
         success: true,
-        data: [systemRouter, permissionRouter, frameRouter]
+        data: [systemRouter, permissionRouter, frameRouter, componentsRouter]
       };
     }
   }

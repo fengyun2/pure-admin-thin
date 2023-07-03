@@ -1,4 +1,6 @@
 {
+  // 执行文字相关的导航或操作时将用作文字分隔符的字符
+  "editor.wordSeparators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
   "editor.formatOnType": true,
   "editor.formatOnSave": true,
   "[vue]": {
@@ -8,7 +10,7 @@
   "editor.fontSize": 16,
   "editor.formatOnPaste": true,
   "editor.guides.bracketPairs": "active",
-  "files.autoSave": "afterDelay",
+  "files.autoSave": "off",
   "git.confirmSync": false,
   "workbench.startupEditor": "newUntitledFile",
   "editor.suggestSelection": "first",
