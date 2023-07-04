@@ -258,12 +258,12 @@ const componentsRouter = {
   },
   children: [
     {
-      path: "/components/form",
-      name: "form",
+      path: "/components/form/index",
+      name: "ComponentsForm", // 需要跟页面的name保持一致，否则无法渲染出页面
       meta: {
-        icon: "flUser",
-        title: "form",
-        roles: ["admin"]
+        title: "form表单",
+        roles: ["admin", "common"],
+        showParent: true
       }
     }
   ]

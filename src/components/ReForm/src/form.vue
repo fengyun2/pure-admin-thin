@@ -20,16 +20,19 @@
                 v-if="formItem.type === 'input' || formItem.type === 'password'"
               >
                 <el-input
+                  v-bind="formItem.attrs"
                   v-model="formValues[`${formItem.prop}`]"
                   :type="formItem.type"
-                  :placeholder="formItem.placeholder"
                 />
               </template>
               <!-- 渲染select表单 -->
               <template v-if="formItem.type === 'select'">
                 <el-select
+                  :style="{
+                    width: '100%'
+                  }"
+                  v-bind="formItem.attrs"
                   v-model="formValues[`${formItem.prop}`]"
-                  :placeholder="formItem.placeholder"
                 >
                   <el-option
                     v-for="item in formItem.options"
@@ -43,17 +46,19 @@
               <!-- 渲染date表单 -->
               <template v-if="formItem.type === 'date'">
                 <el-date-picker
+                  :style="{
+                    width: '100%'
+                  }"
                   v-bind="formItem.attrs"
                   v-model="formValues[`${formItem.prop}`]"
-                  :placeholder="formItem.placeholder"
                 />
               </template>
               <!-- 渲染textarea表单 -->
               <template v-if="formItem.type === 'textarea'">
                 <el-input
+                  v-bind="formItem.attrs"
                   v-model="formValues[`${formItem.prop}`]"
                   :type="formItem.type"
-                  :placeholder="formItem.placeholder"
                 />
               </template>
               <!-- 渲染radio表单 -->
@@ -85,7 +90,7 @@ const props = defineProps({
     default: () => []
   },
   labelWidth: { type: String, default: "100px" },
-  itemStyle: { type: Object, default: () => ({ padding: "10px 40px" }) },
+  itemStyle: { type: Object, default: () => ({ padding: "0" }) },
   colLayout: {
     type: Object,
     default: () => ({

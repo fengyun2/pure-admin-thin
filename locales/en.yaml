@@ -56,6 +56,7 @@ menus:
   vue-router: VueRouter
   pinia: Pinia
   vite: Vite
+  postmessage: "Postmessage"
 status:
   hsLoad: Loading...
 login:

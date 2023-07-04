@@ -1,5 +1,11 @@
 // https://juejin.cn/post/7032109872577511454
-type IFormType = "input" | "password" | "textarea" | "select" | "datepicker";
+type IFormType =
+  | "input"
+  | "password"
+  | "textarea"
+  | "select"
+  | "datepicker"
+  | "date";
 export interface IFormItem {
   // 来获取对应表单项的数据,我们会将表单全部数据，通过Object传递，所以需要他动态获取。
   prop: string;
@@ -10,11 +16,12 @@ export interface IFormItem {
   // 表单验证规则
   rules?: any[];
   // 表单的提示文字
-  placeholder?: any;
+  // placeholder?: any;
   // 针对select
   options?: any[];
   // 针对特殊的属性
   attrs?: any;
+  style?: CSSStyleDeclaration;
   // 是否显示该表单项
   isHidden?: boolean;
 }

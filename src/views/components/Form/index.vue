@@ -7,4 +7,7 @@
 <script lang="ts" setup>
 import formOptions from "./formConfig";
 import { ReSearchForm } from "@/components/ReForm";
+defineOptions({
+  name: "ComponentsForm"
+});
 </script>

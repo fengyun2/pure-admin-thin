@@ -5,10 +5,10 @@
         <h1 class="header">高级检索</h1>
       </template>
       <template #footer>
-        <el-button plain size="medium" type="danger" @click="handleClear"
+        <el-button plain size="small" type="danger" @click="handleClear"
           >重置</el-button
         >
-        <el-button plain size="medium" type="primary" @click="handleSearch"
+        <el-button plain size="small" type="primary" @click="handleSearch"
           >搜索</el-button
         >
       </template>
@@ -17,7 +17,7 @@
 </template>
 <script lang="ts" setup>
 import { ref, PropType } from "vue";
-import ReForm from "./form";
+import ReForm from "./form.vue";
 import { IForm, SearchFormEmits } from "./types";
 defineOptions({
   name: "ReSearchForm"
