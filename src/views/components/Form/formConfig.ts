@@ -39,7 +39,7 @@ const formItemOptions: IFormItem[] = [
       {
         min: 3,
         max: 5,
-        message: "Length should be 3 to 5",
+        message: "长度 3 到 5 个字符",
         trigger: "blur"
       }
     ],

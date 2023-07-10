@@ -1,4 +1,5 @@
 // https://juejin.cn/post/7032109872577511454
+
 type IFormType =
   | "input"
   | "password"
@@ -36,10 +37,12 @@ export interface IForm {
   colLayout?: any;
   // 每个表单项的样式
   itemStyle?: any;
+  // 校验规则
+  rules?: any[];
 }
 
 export interface Emits {
-  (e: "update:value", val: any): void;
+  (e: "update:modelValue", val: any): void;
 }
 
 export interface SearchFormEmits {

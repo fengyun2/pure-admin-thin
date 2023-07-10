@@ -1,6 +1,6 @@
 <template>
   <div class="re-search-form">
-    <re-form v-bind="formOptions" v-model="formValues">
+    <re-form v-bind="formOptions" ref="formRef" v-model="formValues">
       <template #header>
         <h1 class="header">高级检索</h1>
       </template>
@@ -16,9 +16,11 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, PropType } from "vue";
+import { ref, watch, PropType } from "vue";
+// import type { FormInstance } from "element-plus";
 import ReForm from "./form.vue";
 import { IForm, SearchFormEmits } from "./types";
+
 defineOptions({
   name: "ReSearchForm"
 });
@@ -32,12 +34,23 @@ const props = defineProps({
 
 const emit = defineEmits<SearchFormEmits>();
 
+const formRef = ref();
+
 const originFormValues: any = {};
 props.formOptions.formItems?.forEach(item => {
-  originFormValues[`${item.field}`] = "";
+  originFormValues[`${item.prop}`] = "";
 });
 // 定义表单相关的数据。
 const formValues = ref(originFormValues);
+
+watch(
+  formValues,
+  newFormValues => {
+    console.warn("watch 【search form】 values change: ", newFormValues);
+  },
+  { deep: true }
+);
+
 // 处理清空按钮
 const handleClear = () => {
   // formValues.value = originFormValues
@@ -51,6 +64,15 @@ const handleClear = () => {
 
 // 处理搜索
 const handleSearch = () => {
-  emit("search", formValues.value);
+  formRef.value.formRef.validate((valid, fields) => {
+    if (valid) {
+      console.warn(formValues.value, " search successfully!");
+      emit("search", formValues.value);
+    } else {
+      console.error("handleSearch error: ", fields);
+    }
+  });
 };
+
+defineExpose({ formRef });
 </script>

@@ -3,7 +3,12 @@
     <div class="form-header">
       <slot name="header" />
     </div>
-    <el-form :label-width="labelWidth">
+    <el-form
+      ref="formRef"
+      :model="formValues"
+      :rules="rules"
+      :label-width="labelWidth"
+    >
       <el-row>
         <template v-for="formItem in formItems" :key="formItem.field">
           <el-col v-bind="colLayout">
@@ -74,6 +79,7 @@
 </template>
 <script lang="ts" setup>
 import { PropType, ref, watch } from "vue";
+import type { FormInstance } from "element-plus";
 import { IFormItem, Emits } from "./types";
 
 defineOptions({
@@ -89,6 +95,10 @@ const props = defineProps({
     type: Array as PropType<IFormItem[]>,
     default: () => []
   },
+  rules: {
+    type: Object,
+    default: () => ({})
+  },
   labelWidth: { type: String, default: "100px" },
   itemStyle: { type: Object, default: () => ({ padding: "0" }) },
   colLayout: {
@@ -103,16 +113,20 @@ const props = defineProps({
   }
 });
 const emit = defineEmits<Emits>();
+const formRef = ref<FormInstance>();
 // 这里取出表单数据的拷贝，如果修改表单数据的时候，即清空数据，由于这里的代码只能执行一次，所以不能被清除。我们可以使用watch来监听，然后当表单数据清空后，我们就可以重新拷贝了。
 const formValues = ref({ ...props.modelValue });
 
 watch(
   formValues,
   newFormValues => {
-    emit("update:value", newFormValues);
+    console.warn("watch form values change: ", newFormValues);
+    emit("update:modelValue", newFormValues);
   },
   { deep: true }
 );
+
+defineExpose({ formRef });
 </script>
 <style lang="scss" scoped>
 .re-form {
