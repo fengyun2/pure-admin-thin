@@ -5,7 +5,7 @@ export default {
   path: "/",
   name: "components",
   component: Layout,
-  redirect: "/components/form",
+  redirect: "/components/form/index",
   meta: {
     icon: "homeFilled",
     title: $t("menus.hshome"),
@@ -13,9 +13,9 @@ export default {
   },
   children: [
     {
-      path: "/components/form",
+      path: "/components/form/index",
       name: "form",
-      component: () => import("@/views/components/form.vue"),
+      component: () => import("@/views/components/form/index.vue"),
       meta: {
         title: "form 表单"
       }
