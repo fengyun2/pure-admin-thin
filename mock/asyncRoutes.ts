@@ -21,8 +21,8 @@ const systemRouter = {
       name: "User",
       meta: {
         icon: "flUser",
-        title: "menus.hsUser",
-        roles: ["admin"]
+        title: "menus.hsUser"
+        // roles: ["admin"]
       }
     },
     {
@@ -30,8 +30,8 @@ const systemRouter = {
       name: "Role",
       meta: {
         icon: "role",
-        title: "menus.hsRole",
-        roles: ["admin"]
+        title: "menus.hsRole"
+        // roles: ["admin"]
       }
     },
     {
@@ -39,8 +39,8 @@ const systemRouter = {
       name: "Dept",
       meta: {
         icon: "dept",
-        title: "menus.hsDept",
-        roles: ["admin"]
+        title: "menus.hsDept"
+        // roles: ["admin"]
       }
     }
   ]
@@ -58,17 +58,17 @@ const permissionRouter = {
       path: "/permission/page/index",
       name: "PermissionPage",
       meta: {
-        title: "menus.permissionPage",
-        roles: ["admin", "common"]
+        title: "menus.permissionPage"
+        // roles: ["admin", "common"]
       }
     },
     {
       path: "/permission/button/index",
       name: "PermissionButton",
       meta: {
-        title: "menus.permissionButton",
-        roles: ["admin", "common"],
-        auths: ["btn_add", "btn_edit", "btn_delete"]
+        title: "menus.permissionButton"
+        // roles: ["admin", "common"],
+        // auths: ["btn_add", "btn_edit", "btn_delete"]
       }
     }
   ]
@@ -262,7 +262,7 @@ const componentsRouter = {
       name: "ComponentsForm", // 需要跟页面的name保持一致，否则无法渲染出页面
       meta: {
         title: "form表单",
-        roles: ["admin", "common"],
+        // roles: ["admin", "common"],
         showParent: true
       }
     }

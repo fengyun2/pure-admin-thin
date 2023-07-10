@@ -154,6 +154,7 @@ function handleAsyncRoutes(routeList) {
   if (routeList.length === 0) {
     usePermissionStoreHook().handleWholeMenus(routeList);
   } else {
+    // console.warn(router.options.routes[0], " all Routes =====>");
     formatFlatteningRoutes(addAsyncRoutes(routeList)).map(
       (v: RouteRecordRaw) => {
         // 防止重复添加路由
@@ -164,6 +165,7 @@ function handleAsyncRoutes(routeList) {
         ) {
           return;
         } else {
+          console.warn(v.path, " v.path ========>");
           // 切记将路由push到routes后还需要使用addRoute，这样路由才能正常跳转
           router.options.routes[0].children.push(v);
           // 最终路由进行升序

@@ -45,6 +45,8 @@ Object.keys(modules).forEach(key => {
   routes.push(modules[key].default);
 });
 
+// console.warn(routes, " routes =====>");
+
 /** 导出处理后的静态路由（三级及以上的路由全部拍成二级） */
 export const constantRoutes: Array<RouteRecordRaw> = formatTwoStageRoutes(
   formatFlatteningRoutes(buildHierarchyTree(ascending(routes.flat(Infinity))))
