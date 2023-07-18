@@ -76,6 +76,9 @@ const formItemOptions: IFormItem[] = [
       clearable: true,
       filterable: true
     }
+  },
+  {
+    search: true
   }
 ];
 

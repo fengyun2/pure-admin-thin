@@ -9,11 +9,11 @@ type IFormType =
   | "date";
 export interface IFormItem {
   // 来获取对应表单项的数据,我们会将表单全部数据，通过Object传递，所以需要他动态获取。
-  prop: string;
+  prop?: string;
   // formitem的选项，表单类型
-  type: IFormType;
+  type?: IFormType;
   // 表单项的文本
-  label: string;
+  label?: string;
   // 表单验证规则
   rules?: any[];
   // 表单的提示文字
@@ -25,6 +25,8 @@ export interface IFormItem {
   style?: CSSStyleDeclaration;
   // 是否显示该表单项
   isHidden?: boolean;
+  // 是否是搜索按钮
+  search?: boolean;
 }
 
 // 整个表单的props对象的约束。
@@ -43,9 +45,13 @@ export interface IForm {
 
 export interface Emits {
   (e: "update:modelValue", val: any): void;
+  (e: "search", val: any): void;
+  (e: "reset"): void;
+  (e: "clear"): void;
 }
 
 export interface SearchFormEmits {
   (e: "search", val: any): void;
+  (e: "reset"): void;
   (e: "clear"): void;
 }
