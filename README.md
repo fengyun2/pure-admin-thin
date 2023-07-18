@@ -29,3 +29,5 @@ pnpm build
 ## 配套保姆级文档
 
 - [查看文档](https://yiming_chang.gitee.io/pure-admin-doc)
+- [Geeker-Admin](https://github.com/HalseySpicy/Geeker-Admin/) - 封装的 el-table 组件思路非常赞
+  - [Vue3.2 + Element-Plus 二次封装 el-table（Pro 版 🚀🚀）](https://juejin.cn/post/7166068828202336263)
